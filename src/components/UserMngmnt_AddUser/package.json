@@ -1,0 +1,6 @@
+{
+    "name": "UserMngmnt_AddUser",
+    "main": "./UserMngmnt_AddUser.js",
+    "version": "0.1.0",
+    "description": "Container to display user management-add_user option."
+}

@@ -1,0 +1,15 @@
+{
+  "name": "component-on-the-go",
+  "version": "1.0.0",
+  "description": "components ready to go",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "antd": "^3.15.1",
+    "react": "^16.8.4"
+  }
+}

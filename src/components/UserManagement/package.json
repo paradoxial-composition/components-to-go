@@ -1,0 +1,6 @@
+{
+    "name": "UserManagement",
+    "main": "./UserManagement.js",
+    "version": "0.1.0",
+    "description": "Container to display user management option."
+}

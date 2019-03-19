@@ -1,0 +1,8 @@
+.LoginInfo__items {
+    display: flex;
+    align-items: center;
+}
+
+.LoginInfo__avatar {
+    padding: 0 1.5rem;
+}

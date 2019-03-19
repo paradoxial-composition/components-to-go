@@ -1,0 +1,6 @@
+{
+    "name": "UserTab",
+    "main": "./UserTab.js",
+    "version": "0.1.0",
+    "description": "Grid to display user info."
+}

@@ -1,0 +1,6 @@
+{
+    "name": "GE_Generate",
+    "main": "./GE_Generate.js",
+    "version": "0.1.0",
+    "description": "Container to display GeneralEstimation, Settings option."
+}

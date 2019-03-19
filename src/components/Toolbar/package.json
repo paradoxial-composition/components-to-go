@@ -1,0 +1,6 @@
+{
+    "name": "Toolbar",
+    "main": "./Toolbar.js",
+    "version": "0.1.0",
+    "description": "Toolbar holding logo, search bar and login info."
+}

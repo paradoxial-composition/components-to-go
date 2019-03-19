@@ -1,0 +1,6 @@
+{
+    "name": "LoginInfo",
+    "main": "./LoginInfo.js",
+    "version": "0.1.0",
+    "description": "Login card for current user's information"
+}

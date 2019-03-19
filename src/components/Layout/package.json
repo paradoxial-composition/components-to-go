@@ -1,0 +1,6 @@
+{
+    "name": "Layout",
+    "main": "./Layout.js",
+    "version": "0.1.0",
+    "description": "LAyout that holds child components"
+}

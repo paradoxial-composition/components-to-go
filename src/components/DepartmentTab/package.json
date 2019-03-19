@@ -1,0 +1,6 @@
+{
+    "name": "Department",
+    "main": "./Department.js",
+    "version": "0.1.0",
+    "description": "Grid to display department info."
+}

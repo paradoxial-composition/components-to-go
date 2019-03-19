@@ -1,0 +1,6 @@
+{
+    "name": "SideMenu",
+    "main": "./SideMenu.js",
+    "version": "0.1.0",
+    "description": "Side Menu for aveable features/options and navigation"
+}
