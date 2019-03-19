@@ -1,11 +1,9 @@
 import React from 'react';
-import axios from 'axios';
 import {
     Form, Icon, Input, Button, Checkbox,
   } from 'antd';
-//import auth from './auth/auth';
-import { Redirect } from "react-router-dom";
-
+import RegisterForm from '../RegisterForm';
+  /* jshint ignore:start */
   class LoginForm extends React.Component {
 
     constructor() {
@@ -13,7 +11,9 @@ import { Redirect } from "react-router-dom";
       this.state = {
           redirect: false,
           forgot: false,
-          email: ''
+          signup: false,
+          email: '',
+          password: '',
       };
       console.log('reload ....')
   }
@@ -43,7 +43,20 @@ import { Redirect } from "react-router-dom";
           });
           }
     };
-  
+
+    handleSignUpClick = (e) => {
+      e.preventDefault();
+      if( this.state.signup) {
+        this.setState({
+          signup: false
+      });
+      } else {
+        this.setState({
+          signup: true
+      });
+      }
+    }
+    
     handleClickConfirm = (e) => {
       e.preventDefault();
           if( this.state.forgot) {
@@ -55,13 +68,9 @@ import { Redirect } from "react-router-dom";
               forgot: true
           });
           }
-          const email= this.state.email;
+          //const email= this.state.email;
 
-          axios.post(`http://localhost:5000/changePassword`,  email )
-         .then(res => {
-           console.log(res);
-           console.log(res.data);
-         })
+          //axios backend call
 
     };
 
@@ -71,10 +80,15 @@ import { Redirect } from "react-router-dom";
 
       const redirect = this.state.redirect;
       const forgot = this.state.forgot;
+      const signup = this.state.signup;
 
       if(redirect) {
-        return <Redirect to="/welcome" />
+        // add redirect ex: return <Redirect to="/welcome" />
     } else {
+        if (signup) {
+          //add redirect ex: return <Redirect to="/login/register" />
+          return <RegisterForm />
+        } else {
         if (forgot) {
             //Forgot Password Form
             return (
@@ -104,14 +118,14 @@ import { Redirect } from "react-router-dom";
                   {getFieldDecorator('userName', {
                     rules: [{ required: true, message: 'Please input your username!' }],
                   })(
-                    <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
+                    <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" onChange={(event) => this.setState({email:event.target.value} )} />
                   )}
                 </Form.Item>
                 <Form.Item>
                   {getFieldDecorator('password', {
                     rules: [{ required: true, message: 'Please input your Password!' }],
                   })(
-                    <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
+                    <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" onChange={(event) => this.setState({password:event.target.value} )} />
                   )}
                 </Form.Item>
                 <Form.Item>
@@ -128,9 +142,15 @@ import { Redirect } from "react-router-dom";
                     Log in
                   </Button>
                 </Form.Item>
+                <Form.Item>
+                  
+                  <a className="login-form-forgot" href="#" onClick={this.handleSignUpClick}>Sign up</a>
+                  
+                </Form.Item>
               </Form>
             );
             }
+          }
     }
   }
 }

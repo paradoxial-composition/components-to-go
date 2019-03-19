@@ -2,9 +2,10 @@ import React from 'react';
 
 import Toolbar from '../Toolbar/Toolbar';
 import SideMenu from '../SideMenu';
-
-import RouterView from './router';
-import { BrowserRouter } from 'react-router-dom';
+import UserManagement from '../UserManagement';
+import GE_Generate from '../GE_Generate';
+import GE_Params from '../GE_Parameters';
+import GE_Gen from '../GE_Generate';
 
 class Layout extends React.Component {
   
@@ -19,19 +20,18 @@ class Layout extends React.Component {
 
     console.log(this.state.openKeys);
     return (
-      <BrowserRouter>
           <div>
             
             <Toolbar />
             <main style={{marginTop: '64px'}}>
               <div style={{display: 'flex'}}>
                 <SideMenu data={this.state.option}/>
-                  <RouterView></RouterView>
-                </div>
+                <UserManagement />
+              </div>
+
               
             </main>
           </div>
-        </BrowserRouter>
     );
   }
 }

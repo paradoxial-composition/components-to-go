@@ -1,13 +1,10 @@
 import React from 'react';
-import axios from 'axios';
-import { Redirect } from 'react-router-dom';
 import './ChangePassword.css';
 import {
     Card, Form, Icon, Input, Button, Checkbox,
   } from 'antd';
-//import auth from './auth/auth';
-import { request } from 'https';
 
+  /* jshint ignore:start */
   class LoginForm extends React.Component {
     state = {
       password:'',
@@ -17,17 +14,7 @@ import { request } from 'https';
 
     handleClick = event => {
       event.preventDefault();
-      const UserEmail = this.props.location.pathname.split('/');
-
-      const user = {
-        email: UserEmail[2],
-        password: this.state.password,
-      };
-      axios.post(`http://localhost:5000/validatePassword/` ,  user )
-        .then(res => {
-          console.log(res);
-          console.log(res.data);
-        })
+      //backend communication logic here
 
         this.setState({
           redirect: true
@@ -41,7 +28,7 @@ import { request } from 'https';
       const { getFieldDecorator } = this.props.form;
       const redirect = this.state.redirect;
       if(redirect) {
-        return <Redirect to="/login" />
+        //redirection ex: return <Redirect to="/login" />
             //Password Form
       } else {
             return (

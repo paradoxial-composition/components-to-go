@@ -1,10 +1,8 @@
 import React from 'react';
 import {Input, Button, notification} from 'antd';
-import axios from 'axios';
-import { Redirect } from "react-router-dom";
 
 
-
+/* jshint ignore:start */
 class AddUser extends React.Component {
    state = {
        name:'',
@@ -19,18 +17,13 @@ class AddUser extends React.Component {
          name: this.state.name,
          email: this.state.email,
        };
-       console.log(user);
-       axios.post(`http://localhost:5000/welcome/addUser`,  user )
-         .then(res => {
-           console.log(res);
-           console.log(res.data);
-         })
+         // addUsed axios back end call
 
          this.setState({
             redirect: true
          });
 
-         //notif
+         //notification
          notification.open({
             message: 'User Added Successfully',
             description: 'Your user has been added',
@@ -40,11 +33,10 @@ class AddUser extends React.Component {
      }
 
    render () {
-       //console.log(this.state.Add);
        const redirect = this.state.redirect;
 
        if ( redirect ) {
-        return <Redirect to="/welcome" />
+        //add redirection ex: return <Redirect to="/welcome" />
        } else {
        return (
            <div>
